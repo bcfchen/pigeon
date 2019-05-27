@@ -1,0 +1,13 @@
+.react-grid-Grid {
+	min-height: calc(100vh - 56px) !important;
+}
+
+.highlight-cell {
+    background-color: palevioletred !important;
+}
+
+.grid-errors-list {
+    column-count: 3;
+    list-style-position: inside;
+    margin: 8px 30px;
+}

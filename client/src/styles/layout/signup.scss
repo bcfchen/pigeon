@@ -1,0 +1,31 @@
+.signup{
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    border-color: #3f51b5;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.signup-form{
+    text-align: center;
+}
+
+.signup-signin-parent-container {
+    width: 100%;
+    text-align:right;
+    margin-bottom: 20px;
+}
+
+.signup-signin-container{
+    right: 0;
+    width: 260px;
+    float: right;
+}
