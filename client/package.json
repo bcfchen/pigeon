@@ -81,7 +81,7 @@
     "build-css": "node-sass-chokidar src/App.scss -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/App.scss -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start-local:dev": "REACT_APP_ALGOLIA_API_KEY=659f53b268d03ed5a9db674ce30912be REACT_APP_ALGOLIA_APP_ID=7VU65U64X4 REACT_APP_ALGOLIA_INDEX_NAME=dev-cloudinary-assets REACT_APP_ALGOLIA_AUTO_TAGS_INDEX_NAME=auto-tags  REACT_APP_API_GATEWAY_REGION=ap-northeast-1 REACT_APP_API_GATEWAY_URL=https://2p3af1f804.execute-api.ap-northeast-1.amazonaws.com/dev REACT_APP_AWS_REGION=ap-northeast-1 REACT_APP_USER_POOL_ID=ap-northeast-1_djCYqnVVG REACT_APP_COGNITO_CLIENT_ID=7r8qnjmernlqveb0smt25t1pfe npm start",
+    "start-local:dev": "REACT_APP_API_GATEWAY_REGION=ap-northeast-1 REACT_APP_API_GATEWAY_URL=https://ryvtix89f1.execute-api.ap-northeast-1.amazonaws.com/development REACT_APP_AWS_REGION=ap-northeast-1 REACT_APP_USER_POOL_ID=ap-northeast-1_nCI9XCZnj REACT_APP_COGNITO_CLIENT_ID=rfhnk86udjmnqu3g1l370jcru npm start",
     "test": "cross-env NODE_PATH=src jest --coverage --env=jsdom",
     "e2e": " node ./node_modules/selenium-cucumber-js/index.js -f ./test/features/weather-page.feature -s ./test/step-definitions -p ./test/page-objects"
   },

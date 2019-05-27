@@ -3,7 +3,7 @@ import { addErrorMessage } from '../../redux/actions/errorHandlerActions';
 
 class BaseVermillionApi {
   constructor() {
-    this.apiName = 'vermillion';
+    this.apiName = 'sakaar';
   }
 
   async put(path, body) {
@@ -33,12 +33,14 @@ class BaseVermillionApi {
       });
   }
 
-  postWithErrorHandling(path, body, dispatch) {
+  post(path, body, dispatch) {
     return API.post(this.apiName, path, { body })
       .then(response => response.data)
       .catch((err) => {
         const { message } = err;
-        dispatch(addErrorMessage(message));
+        if (dispatch) {
+          dispatch(addErrorMessage(message));
+        }
         throw (message);
       });
   }
