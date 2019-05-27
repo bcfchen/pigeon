@@ -1,4 +1,5 @@
 # SAKAAR Glossary Management Application UI
+![alt text](https://imgix.bustle.com/uploads/image/2017/10/30/055fe6ae-2903-4adf-958e-5d009d566d7d-cre-32885_r.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70 "Project Sakaar")
 Application features & callouts:
 - UI for SAKAAR Glossary Management Application
 
