@@ -1,4 +1,4 @@
-# JNTO DAM UI
+# SAKAAR Glossary Management Application UI
 Application features & callouts:
 - UI for SAKAAR Glossary Management Application
 
