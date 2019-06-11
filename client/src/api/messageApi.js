@@ -1,11 +1,11 @@
 import messages from '../data/messages';
 
-export const addMessage = (userId, message) => {
+export const addMessage = (userId, messageText) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
         userId,
-        message,
+        messageText,
       });
     }, 1000);
   });

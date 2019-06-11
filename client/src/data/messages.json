@@ -1,18 +1,18 @@
 [
   {
     "username": "Jean",
-    "message": "I think that movie was horrible"
+    "messageText": "I think that movie was horrible"
   },
   {
     "username": "Mina",
-    "message": "Totally. I couldnt stand a minute of it"
+    "messageText": "Totally. I couldnt stand a minute of it"
   },
   {
     "username": "Billy",
-    "message": "Did anyone eat the popcorn at the theater?"
+    "messageText": "Did anyone eat the popcorn at the theater?"
   },
   {
     "username": "Jason",
-    "message": "Why? What's wrong with it?"
+    "messageText": "Why? What's wrong with it?"
   }
 ]
