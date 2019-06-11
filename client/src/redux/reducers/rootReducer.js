@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import errorHandlerReducer from './errorHandlerReducer';
-import generateFromUrlReducer from './generateFromUrlReducer';
-import consumeReducer from './consumeReducer';
+import authReducer from './authReducer';
+import messageReducer from './messageReducer';
 
 const rootReducer = combineReducers({
   errorHandler: errorHandlerReducer,
-  generate: generateFromUrlReducer,
-  consume: consumeReducer,
+  auth: authReducer,
+  message: messageReducer,
 });
 
 export default rootReducer;

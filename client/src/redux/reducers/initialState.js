@@ -2,12 +2,15 @@ const initialState = {
   errorHandler: {
     errorMessage: undefined,
   },
-  generate: {
-    generatedTerms: [],
+  auth: {
+    email: undefined,
+    password: undefined,
   },
-  consume: {
-    consumedTerms: [],
-  },
+  userInfo: undefined,
+  message: {
+    selfMessages: [],
+    othersMessages: [],
+  }
 };
 
 export default initialState;
