@@ -1,17 +1,21 @@
 [
   {
+    "userId": "1",
     "username": "Jean",
     "messageText": "I think that movie was horrible"
   },
   {
+    "userId": "2",
     "username": "Mina",
     "messageText": "Totally. I couldnt stand a minute of it"
   },
   {
+    "userId": "3",
     "username": "Billy",
     "messageText": "Did anyone eat the popcorn at the theater?"
   },
   {
+    "userId": "4",
     "username": "Jason",
     "messageText": "Why? What's wrong with it?"
   }

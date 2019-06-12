@@ -1,20 +1,22 @@
-.my-message-container {
+.message {
   -webkit-animation-duration: .5s;
   -webkit-animation-delay: 0s;
-  max-width:30%;
-  margin:0 0 .8rem 0;
-  padding-bottom: .6875rem;
+  max-width:85%;
   font-size:.95rem;
-  opacity: 1;
+  margin:0 0 0.8rem 0;
+  padding:.6875rem;
 }
 
-.my-message-inner {
-  font-size:.95rem;
-  right: 0;
-  overflow: auto;
+.my-message {
+  @extend .message;
   border-radius: 0 .75rem 0 .75rem;
   background:#33C507;
   color:white;
-  padding:.6875rem;
-  opacity: 1;
 }
+
+.others-message {
+  @extend .message;
+  border-radius:.75rem 0 .75rem 0;
+  background:#e6e5eb;
+  color:#383641;
+ }

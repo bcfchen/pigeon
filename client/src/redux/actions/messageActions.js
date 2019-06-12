@@ -1,5 +1,6 @@
 import { addMessage, loadMessages } from '../../api/messageApi';
 import * as types from '../constants/action-types';
+import Message from '../../models/core/Message';
 
 export const addMessageSuccess = message => ({
   type: types.ADD_MESSAGE_SUCCESS,
@@ -12,11 +13,20 @@ export const loadMessagesSuccess = messages => ({
 });
 
 export const addMessageActionCreator = (userId, messageText) => async (dispatch) => {
-  const newMessage = await addMessage(userId, messageText);
-  dispatch(addMessageSuccess(newMessage));
+  const newMessageObj = await addMessage(userId, messageText);
+  dispatch(addMessageSuccess(new Message({
+    ...newMessageObj,
+    isMyMessage: true,
+  })));
 };
 
-export const loadMessagesActionCreator = () => async (dispatch) => {
-  const messages = await loadMessages();
+export const loadMessagesActionCreator = (userId) => async (dispatch) => {
+  const messageObjs = await loadMessages();
+  const messages = messageObjs.map(messageObj => (
+    new Message({
+      ...messageObj,
+      isMyMessage: messageObj.userId === userId
+    })
+  ));
   dispatch(loadMessagesSuccess(messages));
 };

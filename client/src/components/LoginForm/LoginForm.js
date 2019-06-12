@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit }) => (
   <div className='uk-panel'>
     <div className='uk-card uk-card-body uk-align-center login-card'>
-      <h3 className='uk-card-title'>Login to JNTO DAM</h3>
       <form onSubmit={() => onSubmit()}>
         <div className='uk-margin'>
           <div className='uk-inline uk-width-1-1'>

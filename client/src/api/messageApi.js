@@ -3,15 +3,15 @@ import Message from '../models/core/Message';
 
 export const addMessage = (userId, messageText) => (new Promise((resolve) => {
   setTimeout(() => {
-    resolve(Message.toMessage({
+    resolve({
       userId,
-      messageText,
-    }));
+      messageText
+    });
   }, 1000);
 }));
 
 export const loadMessages = () => (new Promise((resolve) => {
   setTimeout(() => {
-    resolve(Message.toMessages(messages));
+    resolve(messages);
   }, 1000);
 }));

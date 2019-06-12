@@ -1,9 +1,12 @@
 class Message {
   constructor(properties) {
+    this.id = properties.id;
     this.userId = properties.userId;
     this.messageText = properties.messageText;
     this.isPending = properties.isPending;
     this.isPlaceholder = properties.isPlaceholder;
+    this.isMyMessage = properties.isMyMessage;
+    this.createdAt = new Date();
   }
 
   static toMessages(messageDataObjects) {

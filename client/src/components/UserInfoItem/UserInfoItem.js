@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Message from '../../models/core/Message';
+import User from '../../models/core/User';
 
-const MessageItem = ({ message }) => {
+const UserInfoItem = ({ message }) => {
   const { isPlaceholder, isPending, isMyMessage } = message;
   const messageClass = isMyMessage ? 'my-message uk-align-right'
     : 'others-message uk-align-left';
@@ -19,12 +20,7 @@ const MessageItem = ({ message }) => {
 };
 
 MessageItem.propTypes = {
-  message: PropTypes.instanceOf(Message).isRequired,
-  isMyMessage: PropTypes.bool,
+  user: PropTypes.instanceOf(User).isRequired,
 };
 
-MessageItem.defaultProps = {
-  isMyMessage: false,
-};
-
-export default MessageItem;
+export default UserInfoItem;

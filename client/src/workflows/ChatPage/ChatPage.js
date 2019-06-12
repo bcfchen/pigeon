@@ -20,6 +20,7 @@ class ChatPage extends React.Component {
     this.handleIsLoading = this.handleIsLoading.bind(this);
     this.handleAddMessage = this.handleAddMessage.bind(this);
     this.handleUpdateMessage = this.handleUpdateMessage.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
 
   componentDidMount() {
@@ -27,9 +28,9 @@ class ChatPage extends React.Component {
   }
 
   async loadData() {
-    const { messageHandler } = this.props;
+    const { messageHandler, userInfo } = this.props;
     await this.handleIsLoading(true);
-    await messageHandler.loadMessagesActionCreator();
+    await messageHandler.loadMessagesActionCreator(userInfo.id);
     this.handleIsLoading(false);
   }
 
@@ -43,10 +44,15 @@ class ChatPage extends React.Component {
     this.setState({ newMessageText: messageText });
   }
 
+  scrollToBottom() {
+    this.bottomElem.scrollIntoView({ behavior: 'smooth' });
+  }
+
   async handleAddMessage() {
     const { messageHandler, userInfo } = this.props;
     const { newMessageText } = this.state;
     await messageHandler.addMessageActionCreator(userInfo.id, newMessageText);
+    this.scrollToBottom();
     this.setState({ newMessageText: undefined });
   }
 
@@ -55,7 +61,10 @@ class ChatPage extends React.Component {
     const { newMessageText } = this.state;
     return (
       <div className='uk-panel chat-page'>
-        <ChatWindow messages={messages} />
+        <div className='chat-window-container uk-margin-small-top uk-margin-small-left uk-margin-small-right'>
+          <ChatWindow messages={messages} />
+          <div ref={bottomElem => { this.bottomElem = bottomElem; }} />
+        </div>
         <div className='uk-align-center uk-margin-small-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
           <MessageInput
             newMessageText={newMessageText}
