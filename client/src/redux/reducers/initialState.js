@@ -8,9 +8,9 @@ const initialState = {
   },
   userInfo: undefined,
   message: {
-    selfMessages: [],
+    myMessages: [],
     othersMessages: [],
-  }
+  },
 };
 
 export default initialState;
