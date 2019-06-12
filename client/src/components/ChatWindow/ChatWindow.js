@@ -5,12 +5,16 @@ import Message from '../../models/core/Message';
 
 const ChatWindow = ({ messages }) => {
   const messageItems = messages
-    .map(message => <div key={`${message.userId}-${message.messageText}`}><MessageItem message={message} /></div>);
+    .map(message => (
+      <li key={`${message.userId}-${message.messageText}`}>
+        <MessageItem message={message} />
+      </li>
+    ));
   return (
     <>
-      <div>
+      <ul className='uk-list'>
         {messageItems}
-      </div>
+      </ul>
     </>
   );
 };

@@ -8,8 +8,10 @@ const MessageItem = ({ message, isMyMessage }) => {
 
   return (
     <>
-      <div className={messageClass}>
-        {isPlaceholder ? 'I am placeholder' : message.messageText}
+      <div className='my-message-container uk-align-right'>
+        <div className='my-message-inner'>
+          {isPlaceholder ? 'I am placeholder' : message.messageText}
+        </div>
       </div>
     </>
   );

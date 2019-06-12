@@ -56,7 +56,7 @@ class ChatPage extends React.Component {
     return (
       <div className='uk-panel chat-page'>
         <ChatWindow messages={messages} />
-        <div className='uk-align-center uk-margin-medium-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
+        <div className='uk-align-center uk-margin-small-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
           <MessageInput
             newMessageText={newMessageText}
             onAddMessage={this.handleAddMessage}
