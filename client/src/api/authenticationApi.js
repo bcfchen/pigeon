@@ -1,9 +1,10 @@
 import userInfo from '../data/userInfo';
+import User from '../models/core/User';
 
-export default login = (email, password) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(userInfo);
-    }, 1000);
-  });
-}
+const login = (email, password) => (new Promise((resolve) => {
+  setTimeout(() => {
+    resolve(new User(userInfo));
+  }, 1000);
+}));
+
+export default login;

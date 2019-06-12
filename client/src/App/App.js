@@ -1,19 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import '../App.css';
-import HistoryChecker from '../components/HistoryChecker/HistoryChecker';
-import ErrorIndicator from '../components/ErrorIndicator/ErrorIndicator';
-import MainPage from '../workflows/MainPage/MainPage';
+import LoginPage from '../workflows/LoginPage/LoginPage';
+import ChatPage from '../workflows/ChatPage/ChatPage';
 
-const App = () =>
-  (
-    <>
-      <ErrorIndicator />
-      <div className='app'>
-        <HistoryChecker />
-        <Route path='/' component={MainPage} />
-      </div>
-    </>
-  );
+const App = () => (
+  <>
+    <div className='app'>
+      <Route path='/' component={LoginPage} />
+      {/* <Route path='/' component={LoginPage} />
+      <Route path='/chat' component={ChatPage} /> */}
+    </div>
+  </>
+);
 
 export default App;

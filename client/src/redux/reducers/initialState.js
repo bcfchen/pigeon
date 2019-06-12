@@ -1,12 +1,9 @@
 const initialState = {
-  errorHandler: {
-    errorMessage: undefined,
-  },
   auth: {
     email: undefined,
     password: undefined,
+    userInfo: undefined,
   },
-  userInfo: undefined,
   message: {
     myMessages: [],
     othersMessages: [],

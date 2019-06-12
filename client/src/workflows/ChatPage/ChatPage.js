@@ -75,7 +75,7 @@ ChatPage.propTypes = {
 const mapStateToProps = state => ({
   myMessages: state.message.myMessages,
   othersMessages: state.message.othersMessages,
-  userInfo: state.message.othersMessages,
+  userInfo: state.auth.userInfo,
 });
 
 const mapDispatchToProps = dispatch => ({

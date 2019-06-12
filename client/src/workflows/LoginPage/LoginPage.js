@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as authActions from '../../redux/actions/authActions';
-import LoginForm from '../../components/LoginForm';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 class LoginPage extends React.Component {
   constructor() {
@@ -14,11 +14,16 @@ class LoginPage extends React.Component {
       isLoading: false,
     };
 
+    this.handleLogin = this.handleLogin.bind(this);
     this.handleEmailUpdate = this.handleEmailUpdate.bind(this);
     this.handlePasswordUpdate = this.handlePasswordUpdate.bind(this);
   }
 
-  
+  async handleLogin() {
+    const { authHandler } = this.props;
+    const { email, password } = this.state;
+    await authHandler.login(email, password);
+  }
 
   handleEmailUpdate(email) {
     this.setState({
@@ -52,9 +57,7 @@ LoginPage.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  myMessages: state.message.myMessages,
-  othersMessages: state.message.othersMessages,
-  userInfo: state.message.othersMessages,
+  userInfo: state.auth.userInfo,
 });
 
 const mapDispatchToProps = dispatch => ({

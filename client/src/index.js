@@ -11,11 +11,9 @@ import App from './App/App';
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <AppProvider theme={theme}>
-        <Router>
-          <App />
-        </Router>
-      </AppProvider>
+      <Router>
+        <App />
+      </Router>
     </PersistGate>
   </Provider>,
   document.getElementById('root'),

@@ -1,37 +1,6 @@
-@import "../node_modules/toastr/build/toastr.min.css";
-@import "styles/layout/assetPage.scss";
-@import "styles/layout/blogPage.scss";
-@import "styles/layout/searchPage.scss";
-@import "styles/layout/assetCard.scss";
-@import "styles/layout/assetSearch.scss";
-@import "styles/layout/assetDetails.scss";
-@import "styles/layout/assetSearchResults.scss";
-@import "styles/layout/blogPostList.scss";
-@import "styles/layout/headerAndFooter.scss";
-@import "styles/layout/assetDetailsInfo.scss";
-@import "styles/layout/assetDetailsDisplay.scss";
-@import "styles/layout/assetDetailsKeywords.scss";
-@import "styles/layout/assetDetailsFooter.scss";
-@import "styles/layout/signup.scss";
-@import "styles/layout/signin.scss";
-@import "styles/layout/userAuthentication.scss";
-@import "styles/layout/projects.scss";
-@import "styles/layout/folders.scss";
-@import "styles/layout/genericCard.scss";
-@import "styles/layout/userProfile.scss";
-@import "styles/layout/grid.scss";
-@import "styles/layout/addAssetsToFolderModal.scss";
-@import "styles/layout/stepper.scss";
-@import "styles/layout/ieGlobal.scss";
-@import "styles/layout/pageLoader.scss";
-@import "styles/layout/gridDetailModal.scss";
+@import "styles/layout/login.scss";
 
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
