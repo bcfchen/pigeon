@@ -1,0 +1,17 @@
+.user-icon {
+  background-color: white;
+  -webkit-border-radius: 99em;
+  border-radius: 99em;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+} 
+
+.user-info-item {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-page-container {
+  height: 100%;
+}

@@ -11,21 +11,22 @@ class InfoPage extends React.Component {
 
   render() {
     const { users } = this.props;
-    const usersList = users.map(user => <li>
-
+    const usersList = users.map(user => <li className='user-info-item'>
+      <img className="uk-margin-medium-left uk-margin-medium-right user-icon" src={user.img} width={50} height={50} alt="" />
+      <span className="uk-text-middle">{user.name}</span>
     </li>);
     return (
-      <>
-        <ul>
-
+      <div className='info-page-container'>
+        <ul className='uk-list uk-list-divider'>
+          {usersList}
         </ul>
-      </>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  users: state.info.users,
+  users: state.users.users,
 });
 
 const mapDispatchToProps = dispatch => ({

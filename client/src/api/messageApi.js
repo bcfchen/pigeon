@@ -1,5 +1,4 @@
 import messages from '../data/messages';
-import Message from '../models/core/Message';
 
 export const addMessage = (userId, messageText) => (new Promise((resolve) => {
   setTimeout(() => {

@@ -1,7 +1,7 @@
 import * as types from '../constants/action-types';
 import initialState from './initialState';
 
-export default function userInfoReducer(state = initialState.userInfo, action) {
+export default function userInfoReducer(state = initialState.users, action) {
   let newState;
   switch (action.type) {
     case types.LOAD_USERS_SUCCESS:

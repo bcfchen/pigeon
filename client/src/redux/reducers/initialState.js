@@ -7,6 +7,9 @@ const initialState = {
   message: {
     messages: [],
   },
+  users: {
+    users: []
+  }
 };
 
 export default initialState;

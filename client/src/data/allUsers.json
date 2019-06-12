@@ -1,3 +1,68 @@
 [
-  
+  {
+    "id": 1,
+    "img": "https://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png",
+    "name": "Pikachu",
+    "description": "yellow fat pokemon"
+  },
+  {
+    "id": 2,
+    "img": "https://cdn.bulbagarden.net/upload/7/73/004Charmander.png",
+    "name": "Charmander",
+    "description": "fire spitting lizard"
+  },
+  {
+    "id": 3,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png",
+    "name": "Squirtle",
+    "description": "water shooting turtle"
+  },
+  {
+    "id": 4,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/250px-001Bulbasaur.png",
+    "name": "Bulbasaur",
+    "description": "no one likes me :("
+  },
+  {
+    "id": 5,
+    "img": "https://cdn.bulbagarden.net/upload/7/7e/006Charizard.png",
+    "name": "Charizard",
+    "description": "this lizard scary"
+  },
+  {
+    "id": 6,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/a/ae/003Venusaur.png/250px-003Venusaur.png",
+    "name": "Venusaur",
+    "description": "still no one likes me :("
+  },
+  {
+    "id": 7,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/0/02/009Blastoise.png/250px-009Blastoise.png",
+    "name": "Blastoise",
+    "description": "my turtle grew"
+  },
+  {
+    "id": 8,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/8/88/026Raichu.png/250px-026Raichu.png",
+    "name": "Raichu",
+    "description": "not so nice now"
+  },
+  {
+    "id": 9,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/b/b1/151Mew.png/250px-151Mew.png",
+    "name": "Mew",
+    "description": "needs more food"
+  },
+  {
+    "id": 10,
+    "img": "https://cdn.bulbagarden.net/upload/thumb/7/78/150Mewtwo.png/250px-150Mewtwo.png",
+    "name": "Mew Two",
+    "description": "mean cat"
+  },
+  {
+    "id": 11,
+    "img": "https://cdn.bulbagarden.net/upload/4/4e/115Kangaskhan.png",
+    "name": "Kangaskhan",
+    "description": "bad kangaroo"
+  }
 ]
