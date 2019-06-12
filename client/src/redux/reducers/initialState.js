@@ -5,8 +5,7 @@ const initialState = {
     userInfo: undefined,
   },
   message: {
-    myMessages: [],
-    othersMessages: [],
+    messages: [],
   },
 };
 

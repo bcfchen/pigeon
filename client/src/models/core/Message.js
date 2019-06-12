@@ -7,7 +7,12 @@ class Message {
   }
 
   static toMessages(messageDataObjects) {
-    return messageDataObjects.map(obj => new Message(obj));
+    const msgs = messageDataObjects.map(obj => this.toMessage(obj));
+    return msgs;
+  }
+
+  static toMessage(messageDataObject) {
+    return new Message(messageDataObject);
   }
 }
 

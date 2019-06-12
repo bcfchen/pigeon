@@ -7,13 +7,13 @@ export default function messageReducer(state = initialState.message, action) {
     case types.ADD_MESSAGE_SUCCESS:
       newState = {
         ...state,
-        othersMessages: action.messages,
+        messages: [...state.messages, action.message],
       };
       break;
     case types.LOAD_MESSAGES_SUCCESS:
       newState = {
         ...state,
-        othersMessages: action.messages,
+        messages: action.messages,
       };
       break;
     default:

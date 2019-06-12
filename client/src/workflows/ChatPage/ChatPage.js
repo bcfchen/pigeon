@@ -35,9 +35,7 @@ class ChatPage extends React.Component {
 
   handleIsLoading(isLoading) {
     return new Promise((resolve) => {
-      this.setState({
-        isLoading,
-      }, () => resolve());
+      this.setState({ isLoading }, () => resolve());
     });
   }
 
@@ -45,41 +43,44 @@ class ChatPage extends React.Component {
     this.setState({ newMessageText: messageText });
   }
 
-  handleAddMessage() {
+  async handleAddMessage() {
     const { messageHandler, userInfo } = this.props;
     const { newMessageText } = this.state;
-    messageHandler.addMessageActionCreator(userInfo.id, newMessageText);
+    await messageHandler.addMessageActionCreator(userInfo.id, newMessageText);
+    this.setState({ newMessageText: undefined });
   }
 
   render() {
-    const { myMessages, othersMessages } = this.props;
+    const { messages } = this.props;
+    const { newMessageText } = this.state;
     return (
-      <>
-        <ChatWindow myMesssages={myMessages} othersMessages={othersMessages} />
-        <MessageInput
-          onAddMessage={this.handleAddMessage}
-          onMessageUpdated={this.handleUpdateMessage}
-        />
-      </>
+      <div className='uk-panel chat-page'>
+        <ChatWindow messages={messages} />
+        <div className='uk-align-center uk-margin-medium-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
+          <MessageInput
+            newMessageText={newMessageText}
+            onAddMessage={this.handleAddMessage}
+            onMessageUpdate={this.handleUpdateMessage}
+          />
+        </div>
+      </div>
     );
   }
 }
 
 ChatPage.propTypes = {
-  myMessages: PropTypes.arrayOf(Message).isRequired,
-  othersMessages: PropTypes.arrayOf(Message).isRequired,
+  messages: PropTypes.arrayOf(PropTypes.shape(Message)).isRequired,
   messageHandler: PropTypes.objectOf(PropTypes.func).isRequired,
-  userInfo: PropTypes.objectOf(User).isRequired,
+  userInfo: PropTypes.objectOf(PropTypes.shape(User)).isRequired,
 };
-
-const mapStateToProps = state => ({
-  myMessages: state.message.myMessages,
-  othersMessages: state.message.othersMessages,
-  userInfo: state.auth.userInfo,
-});
 
 const mapDispatchToProps = dispatch => ({
   messageHandler: bindActionCreators(messageActions, dispatch),
+});
+
+const mapStateToProps = state => ({
+  messages: state.message.messages,
+  userInfo: state.auth.userInfo,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatPage);

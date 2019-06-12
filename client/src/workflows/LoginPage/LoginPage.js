@@ -20,21 +20,18 @@ class LoginPage extends React.Component {
   }
 
   async handleLogin() {
-    const { authHandler } = this.props;
+    const { authHandler, history } = this.props;
     const { email, password } = this.state;
-    await authHandler.login(email, password);
+    await authHandler.loginActionCreator(email, password);
+    history.push('/chat');
   }
 
   handleEmailUpdate(email) {
-    this.setState({
-      email,
-    });
+    this.setState({ email });
   }
 
   handlePasswordUpdate(password) {
-    this.setState({
-      password,
-    });
+    this.setState({ password });
   }
 
   render() {
@@ -46,6 +43,7 @@ class LoginPage extends React.Component {
           password={password}
           onEmailUpdate={this.handleEmailUpdate}
           onPasswordUpdate={this.handlePasswordUpdate}
+          onSubmit={this.handleLogin}
         />
       </>
     );
@@ -54,6 +52,9 @@ class LoginPage extends React.Component {
 
 LoginPage.propTypes = {
   authHandler: PropTypes.objectOf(PropTypes.func).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({

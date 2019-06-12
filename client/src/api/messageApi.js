@@ -3,10 +3,10 @@ import Message from '../models/core/Message';
 
 export const addMessage = (userId, messageText) => (new Promise((resolve) => {
   setTimeout(() => {
-    resolve({
+    resolve(Message.toMessage({
       userId,
       messageText,
-    });
+    }));
   }, 1000);
 }));
 

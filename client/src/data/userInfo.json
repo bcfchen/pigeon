@@ -1,4 +1,5 @@
 {
-  "userId": 15,
-  "name": "Steve Rogers"
+  "id": 15,
+  "name": "Steve Rogers",
+  "email": null
 }

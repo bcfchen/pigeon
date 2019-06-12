@@ -7,9 +7,8 @@ import ChatPage from '../workflows/ChatPage/ChatPage';
 const App = () => (
   <>
     <div className='app'>
-      <Route path='/' component={LoginPage} />
-      {/* <Route path='/' component={LoginPage} />
-      <Route path='/chat' component={ChatPage} /> */}
+      <Route exact path='/' component={LoginPage} />
+      <Route path='/chat' component={ChatPage} />
     </div>
   </>
 );
