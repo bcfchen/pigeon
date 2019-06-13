@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
+import * as messageActions from '../../redux/actions/messageActions';
 
-const NavBar = ({ match }) => {
+const NavBar = ({ match, messageHandler }) => {
   const isInfoMode = match.params.path.indexOf('info') > -1;
   const chatModeNav = (
     <div className="uk-navbar-right">
       <ul className="uk-navbar-nav">
-        <li className="nav-icon"><a href="/info" uk-icon="icon: play-circle"></a></li>
+        <li className="nav-icon"><a onClick={() => { messageHandler.loadMessagesActionCreator() }} uk-icon="icon: play-circle"></a></li>
         <li className="nav-icon"><a href="/info" uk-icon="icon: info"></a></li>
       </ul>
     </div>
@@ -30,4 +32,8 @@ const NavBar = ({ match }) => {
     </nav>);
 };
 
-export default withRouter(connect()(NavBar));
+const mapDispatchToProps = dispatch => ({
+  messageHandler: bindActionCreators(messageActions, dispatch),
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(NavBar));

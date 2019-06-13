@@ -1,22 +1,51 @@
 [
   {
+    "id": 1,
     "userId": "1",
-    "username": "Jean",
+    "username": "Charmander",
+    "userImg": "https://cdn.bulbagarden.net/upload/7/73/004Charmander.png",
     "messageText": "I think that movie was horrible"
   },
   {
+    "id": 2,
     "userId": "2",
-    "username": "Mina",
+    "username": "Squirtle",
+    "userImg": "https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png",
     "messageText": "Totally. I couldnt stand a minute of it"
   },
   {
+    "id": 3,
     "userId": "3",
-    "username": "Billy",
+    "userImg": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/250px-001Bulbasaur.png",
+    "username": "Bulbasaur",
     "messageText": "Did anyone eat the popcorn at the theater?"
   },
   {
+    "id": 4,
     "userId": "4",
-    "username": "Jason",
+    "userImg": "https://cdn.bulbagarden.net/upload/7/7e/006Charizard.png",
+    "username": "Charizard",
     "messageText": "Why? What's wrong with it?"
+  },
+  {
+    "id": 5,
+    "userId": "1",
+    "userImg": "https://cdn.bulbagarden.net/upload/7/7e/006Charizard.png",
+    "username": "Charmander",
+    "messageText": "I think that movie was horrible"
+  },
+  {
+    "id": 6,
+    "userId": "2",
+    "userImg": "https://cdn.bulbagarden.net/upload/thumb/3/39/007Squirtle.png/250px-007Squirtle.png",
+    "username": "Squirtle",
+    "messageText": "Totally. I couldnt stand a minute of it"
+  },
+  {
+    "id": 7,
+    "userId": "3",
+    "userImg": "https://cdn.bulbagarden.net/upload/thumb/2/21/001Bulbasaur.png/250px-001Bulbasaur.png",
+    "username": "Bulbasaur",
+    "messageText": "Did anyone eat the popcorn at the theater?"
   }
 ]

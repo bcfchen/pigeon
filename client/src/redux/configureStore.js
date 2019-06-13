@@ -10,7 +10,7 @@ const persistConfig = {
   key: 'root',
   storage,
   stateReconciler: autoMergeLevel2, // see "Merge Process" section for details.
-  blacklist: ['message'],
+  blacklist: [],
 };
 
 const pReducer = persistReducer(persistConfig, rootReducer);

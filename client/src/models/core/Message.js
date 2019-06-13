@@ -2,6 +2,7 @@ class Message {
   constructor(properties) {
     this.id = properties.id;
     this.userId = properties.userId;
+    this.userImg = properties.userImg;
     this.messageText = properties.messageText;
     this.isPending = properties.isPending;
     this.isPlaceholder = properties.isPlaceholder;

@@ -24,7 +24,19 @@ class ChatPage extends React.Component {
   }
 
   componentDidMount() {
-    this.loadData();
+    const { messages } = this.props;
+    if (!messages || messages.length < 1) {
+      this.loadData().then(() => this.scrollToBottom());
+    } else {
+      this.scrollToBottom();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { messages } = this.props;
+    if (messages.length > prevProps.messages.length) {
+      this.scrollToBottom();
+    }
   }
 
   async loadData() {
@@ -52,7 +64,6 @@ class ChatPage extends React.Component {
     const { messageHandler, userInfo } = this.props;
     const { newMessageText } = this.state;
     await messageHandler.addMessageActionCreator(userInfo.id, newMessageText);
-    this.scrollToBottom();
     this.setState({ newMessageText: undefined });
   }
 

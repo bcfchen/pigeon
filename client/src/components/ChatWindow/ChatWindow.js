@@ -6,7 +6,7 @@ import Message from '../../models/core/Message';
 const ChatWindow = ({ messages }) => {
   const messageItems = messages
     .map(message => (
-      <li key={`${message.userId}-${message.createdAt}`}>
+      <li key={`${message.id}-${message.userId}-${message.createdAt}`}>
         <MessageItem message={message} />
       </li>
     ));

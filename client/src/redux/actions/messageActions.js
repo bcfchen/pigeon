@@ -7,17 +7,20 @@ export const addMessageSuccess = message => ({
   message,
 });
 
+export const addPendingMessage = message => ({
+  type: types.ADD_PENDING_MESSAGE,
+  message,
+});
+
 export const loadMessagesSuccess = messages => ({
   type: types.LOAD_MESSAGES_SUCCESS,
   messages,
 });
 
 export const addMessageActionCreator = (userId, messageText) => async (dispatch) => {
-  const newMessageObj = await addMessage(userId, messageText);
-  dispatch(addMessageSuccess(new Message({
-    ...newMessageObj,
-    isMyMessage: true,
-  })));
+  dispatch(addPendingMessage(new Message({ userId, messageText, isPending: true, isMyMessage: true })));
+  await addMessage(userId, messageText);
+  dispatch(addMessageSuccess());
 };
 
 export const loadMessagesActionCreator = (userId) => async (dispatch) => {

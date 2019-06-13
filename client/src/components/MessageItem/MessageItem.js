@@ -3,18 +3,29 @@ import PropTypes from 'prop-types';
 import Message from '../../models/core/Message';
 
 const MessageItem = ({ message }) => {
-  const { isPlaceholder, isPending, isMyMessage } = message;
-  const messageClass = isMyMessage ? 'my-message uk-align-right'
-    : 'others-message uk-align-left';
+  const { isPending, isMyMessage } = message;
+  const myMessage = (
+    <div className='my-message uk-align-right'>
+      <div className=''>
+        {message.messageText}
+      </div>
+      {isPending && <span uk-icon="icon: clock"></span>}
+    </div>
+  );
 
-  return (
-    <>
-      <div className={messageClass}>
-        <div>
-          {isPlaceholder ? 'I am placeholder' : message.messageText}
+  const othersMessage = (
+    <div className='others-message-container'>
+      <img className="message-icon allow-hover" src={message.userImg} width={25} height={25} alt="" />
+      <div className='others-message uk-align-left'>
+        <div className=''>
+          {message.messageText}
         </div>
       </div>
-    </>
+    </div>
+  );
+
+  return (
+    <>{isMyMessage ? myMessage : othersMessage}</>
   );
 };
 
