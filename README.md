@@ -9,6 +9,7 @@
 - Add new message(s) by typing in the message box and hitting "enter" or the submit button
 - Visualize other users' info by clicking on the __info__ icon on the top right corner
 - Return to chat screen from info screen by hitting the __back__ button on the top left
+- Localization between English and Chinese
 
 ### Feature details
 
@@ -16,6 +17,8 @@
 - Immediately upon adding a new message, a small loading icon will appear on the right side of the new message
 - Loading icon will disappear once message is added successfully (simulated) on the server side
 - Hitting the __play__ button will add multiple messages from other users
+- Use the "English" and "中文" buttons on the login screen to toggle languages
+- Use the __<>__ button on the top right side of the chat screen to toggle languages
 
 ### Technical decisions and caveats
 
@@ -30,6 +33,7 @@
 - Improve transition between chat and info screens, potentially with TransitionGroup
 - Implement retry mechanism for unsuccessful attempts to add new messages (ex. no connection)
 - Visual indicator (ex. "..." in iMessage) while user is typing in the message box
+- Refactor language localeUtilities to be more configurable and scalable to accomodate more languages
 
 ### To install
 Clone this repo with 
@@ -57,3 +61,4 @@ localhost:3000/chat
 - __React/Redux__
 - __uikit__ for design system and icons
 - __PropTypes__ for component property type checking
+- __react-i18next__ for localization
