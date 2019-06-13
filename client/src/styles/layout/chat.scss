@@ -1,7 +1,6 @@
 .chat-page {
   color: #fff;
   height: 85%;
-  // flex-grow: 0.85; 
 }
 
 .chat-window-container {
@@ -13,4 +12,12 @@
 .chat-window-container::-webkit-scrollbar { /* WebKit */
   width: 0;
   height: 0;
+}
+
+.disabled {
+  -webkit-filter: url(#blur-filter);
+  filter: url(#blur-filter);
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  pointer-events: none; 
 }

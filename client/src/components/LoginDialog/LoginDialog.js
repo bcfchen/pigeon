@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as authActions from '../../redux/actions/authActions';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
-class LoginPage extends React.Component {
+class LoginDialog extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -20,10 +20,9 @@ class LoginPage extends React.Component {
   }
 
   async handleLogin() {
-    const { authHandler, history } = this.props;
+    const { authHandler } = this.props;
     const { email, password } = this.state;
     await authHandler.loginActionCreator(email, password);
-    history.push('/chat');
   }
 
   handleEmailUpdate(email) {
@@ -38,23 +37,22 @@ class LoginPage extends React.Component {
     const { email, password } = this.state;
     return (
       <>
-        <LoginForm
-          email={email}
-          password={password}
-          onEmailUpdate={this.handleEmailUpdate}
-          onPasswordUpdate={this.handlePasswordUpdate}
-          onSubmit={this.handleLogin}
-        />
+        <div className='login-dialog'>
+          <LoginForm
+            email={email}
+            password={password}
+            onEmailUpdate={this.handleEmailUpdate}
+            onPasswordUpdate={this.handlePasswordUpdate}
+            onSubmit={this.handleLogin}
+          />
+        </div>
       </>
     );
   }
 }
 
-LoginPage.propTypes = {
+LoginDialog.propTypes = {
   authHandler: PropTypes.objectOf(PropTypes.func).isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -65,4 +63,4 @@ const mapDispatchToProps = dispatch => ({
   authHandler: bindActionCreators(authActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginDialog);

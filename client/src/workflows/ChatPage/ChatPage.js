@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as messageActions from '../../redux/actions/messageActions';
+import LoginDialog from '../../components/LoginDialog/LoginDialog';
 import ChatWindow from '../../components/ChatWindow/ChatWindow';
 import MessageInput from '../../components/MessageInput/MessageInput';
 import Message from '../../models/core/Message';
@@ -24,16 +25,22 @@ class ChatPage extends React.Component {
   }
 
   componentDidMount() {
-    const { messages } = this.props;
-    if (!messages || messages.length < 1) {
+    const { messages, userInfo } = this.props;
+    const hasUser = userInfo && userInfo.id;
+    const hasMessages = messages && messages.length > 0;
+    if (hasUser && !hasMessages) {
       this.loadData().then(() => this.scrollToBottom());
-    } else {
+    } else if (hasMessages) {
       this.scrollToBottom();
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { messages } = this.props;
+    const { messages, userInfo } = this.props;
+    const userLoggedIn = userInfo && !prevProps.userInfo;
+    if (userLoggedIn) {
+      this.loadData();
+    }
     if (messages.length > prevProps.messages.length) {
       this.scrollToBottom();
     }
@@ -68,22 +75,27 @@ class ChatPage extends React.Component {
   }
 
   render() {
-    const { messages } = this.props;
-    const { newMessageText } = this.state;
+    const { messages, userInfo } = this.props;
+    const { newMessageText, isLoading } = this.state;
+    const isLoggedIn = userInfo && userInfo.id;
+    const shouldDisable = !isLoggedIn || isLoading;
     return (
-      <div className='uk-panel chat-page'>
-        <div className='chat-window-container uk-margin-small-top uk-margin-small-left uk-margin-small-right'>
-          <ChatWindow messages={messages} />
-          <div ref={bottomElem => { this.bottomElem = bottomElem; }} />
+      <>
+        {!isLoggedIn && < div className='login-container'><LoginDialog /></div>}
+        <div className={`uk-panel chat-page ${shouldDisable && 'disabled'}`}>
+          <div className='chat-window-container uk-margin-small-top uk-margin-small-left uk-margin-small-right'>
+            <ChatWindow messages={messages} />
+            <div ref={bottomElem => { this.bottomElem = bottomElem; }} />
+          </div>
+          <div className='uk-align-center uk-margin-small-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
+            <MessageInput
+              newMessageText={newMessageText}
+              onAddMessage={this.handleAddMessage}
+              onMessageUpdate={this.handleUpdateMessage}
+            />
+          </div>
         </div>
-        <div className='uk-align-center uk-margin-small-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
-          <MessageInput
-            newMessageText={newMessageText}
-            onAddMessage={this.handleAddMessage}
-            onMessageUpdate={this.handleUpdateMessage}
-          />
-        </div>
-      </div>
+      </>
     );
   }
 }
@@ -91,7 +103,7 @@ class ChatPage extends React.Component {
 ChatPage.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape(Message)).isRequired,
   messageHandler: PropTypes.objectOf(PropTypes.func).isRequired,
-  userInfo: PropTypes.objectOf(PropTypes.shape(User)).isRequired,
+  userInfo: PropTypes.shape(User),
 };
 
 const mapDispatchToProps = dispatch => ({

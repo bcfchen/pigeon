@@ -11,11 +11,9 @@ const ChatWindow = ({ messages }) => {
       </li>
     ));
   return (
-    <>
-      <ul className='uk-list'>
-        {messageItems}
-      </ul>
-    </>
+    <ul className='uk-list'>
+      {messageItems}
+    </ul>
   );
 };
 

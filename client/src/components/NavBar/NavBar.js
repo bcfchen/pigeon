@@ -9,7 +9,15 @@ const NavBar = ({ match, messageHandler }) => {
   const chatModeNav = (
     <div className="uk-navbar-right">
       <ul className="uk-navbar-nav">
-        <li className="nav-icon"><a onClick={() => { messageHandler.loadMessagesActionCreator() }} uk-icon="icon: play-circle"></a></li>
+        <li className="nav-icon">
+          {/* eslint-disable-next-line */}
+          <a
+            href="#/"
+            onClick={() => { messageHandler.loadMessagesActionCreator() }}
+            uk-icon="icon: play-circle">
+          </a>
+        </li>
+        {/* eslint-disable-next-line */}
         <li className="nav-icon"><a href="/info" uk-icon="icon: info"></a></li>
       </ul>
     </div>
@@ -18,6 +26,7 @@ const NavBar = ({ match, messageHandler }) => {
   const infoModeNav = (
     <div className="uk-navbar-left">
       <ul className="uk-navbar-nav">
+        {/* eslint-disable-next-line */}
         <li className="nav-icon"><a href="/chat" uk-icon="icon: arrow-left"></a></li>
       </ul>
     </div>

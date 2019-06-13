@@ -15,7 +15,11 @@ const MessageItem = ({ message }) => {
 
   const othersMessage = (
     <div className='others-message-container'>
-      <img className="message-icon allow-hover" src={message.userImg} width={25} height={25} alt="" />
+      <img
+        className="message-icon allow-hover"
+        src={message.userImg}
+        width={25} height={25}
+        alt="" />
       <div className='others-message uk-align-left'>
         <div className=''>
           {message.messageText}
@@ -30,7 +34,7 @@ const MessageItem = ({ message }) => {
 };
 
 MessageItem.propTypes = {
-  message: PropTypes.instanceOf(Message).isRequired,
+  message: PropTypes.shape(Message).isRequired,
   isMyMessage: PropTypes.bool,
 };
 
