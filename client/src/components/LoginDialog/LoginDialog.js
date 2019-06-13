@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as authActions from '../../redux/actions/authActions';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import LoginForm from '../LoginForm/LoginForm';
 
 class LoginDialog extends React.Component {
   constructor() {
@@ -11,7 +11,6 @@ class LoginDialog extends React.Component {
     this.state = {
       email: undefined,
       password: undefined,
-      isLoading: false,
     };
 
     this.handleLogin = this.handleLogin.bind(this);

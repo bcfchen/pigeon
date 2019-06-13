@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import * as userInfoActions from '../../redux/actions/userInfoActions';
+import User from '../../models/core/User';
 
 class InfoPage extends React.Component {
   constructor() {
@@ -13,6 +15,7 @@ class InfoPage extends React.Component {
     this.loadData = this.loadData.bind(this);
     this.handleIsLoading = this.handleIsLoading.bind(this);
   }
+
   componentDidMount() {
     this.loadData();
   }
@@ -34,10 +37,12 @@ class InfoPage extends React.Component {
     const { users } = this.props;
     const { isLoading } = this.state;
 
-    const usersList = users.map(user => <li key={`${user.id}-${user.name}`} className='user-info-item'>
-      <img className="uk-margin-medium-left uk-margin-medium-right user-icon" src={user.img} width={50} height={50} alt="" />
-      <span className="uk-text-middle">{user.name}</span>
-    </li>);
+    const usersList = users.map(user => (
+      <li key={`${user.id}-${user.name}`} className='user-info-item'>
+        <img className='uk-margin-medium-left uk-margin-medium-right user-icon' src={user.img} width={50} height={50} alt='' />
+        <span className='uk-text-middle'>{user.name}</span>
+      </li>
+    ));
 
     return (
       <div className={`info-page-container ${isLoading && 'disabled'}`}>
@@ -48,6 +53,11 @@ class InfoPage extends React.Component {
     );
   }
 }
+
+InfoPage.propTypes = {
+  userInfoHandler: PropTypes.objectOf(PropTypes.func).isRequired,
+  users: PropTypes.arrayOf(PropTypes.shape(User)).isRequired,
+};
 
 const mapStateToProps = state => ({
   users: state.users.users,

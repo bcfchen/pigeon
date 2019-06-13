@@ -24,6 +24,7 @@ const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit,
             <span className='uk-form-icon' uk-icon='icon: lock' />
             <input
               className='uk-input'
+              autoComplete='off'
               type='password'
               placeholder={t('enterYourPassword')}
               value={password || ''}
@@ -34,14 +35,14 @@ const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit,
         <button type='submit' className='uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom'>
           {t('login')}
         </button>
-        <ul className='uk-subnav uk-subnav-pill' uk-switcher>
+        <ul className='uk-subnav uk-subnav-pill'>
           <li>
-            {/* eslint-disable-next-line*/}
-            <a href="#" onClick={() => { localeUtils.switchLocale('en') }}>{t('english')}</a>
+            {/* eslint-disable-next-line */}
+            <a href="#" onClick={() => localeUtils.switchLocale('en')}>{t('english')}</a>
           </li>
           <li>
-            {/* eslint-disable-next-line*/}
-            <a href="#" onClick={() => { localeUtils.switchLocale('ch') }}>{t('chinese')}</a>
+            {/* eslint-disable-next-line */}
+            <a href="#" onClick={() => localeUtils.switchLocale('ch')}>{t('chinese')}</a>
           </li>
         </ul>
       </form>
@@ -56,6 +57,7 @@ LoginForm.propTypes = {
   password: PropTypes.string,
   onPasswordUpdate: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
 };
 
 LoginForm.defaultProps = {

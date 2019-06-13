@@ -9,17 +9,19 @@ const MessageItem = ({ message }) => {
       <div className=''>
         {message.messageText}
       </div>
-      {isPending && <span uk-icon="icon: clock"></span>}
+      {isPending && <span uk-icon='icon: clock' />}
     </div>
   );
 
   const othersMessage = (
     <div className='others-message-container'>
       <img
-        className="message-icon allow-hover"
+        className='message-icon allow-hover'
         src={message.userImg}
-        width={25} height={25}
-        alt="" />
+        width={25}
+        height={25}
+        alt=''
+      />
       <div className='others-message uk-align-left'>
         <div className=''>
           {message.messageText}
@@ -35,11 +37,6 @@ const MessageItem = ({ message }) => {
 
 MessageItem.propTypes = {
   message: PropTypes.shape(Message).isRequired,
-  isMyMessage: PropTypes.bool,
-};
-
-MessageItem.defaultProps = {
-  isMyMessage: false,
 };
 
 export default MessageItem;
