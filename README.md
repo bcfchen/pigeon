@@ -1,5 +1,5 @@
 # Pigeon Chat UI
-![alt text](https://i.imgur.com/9s5aqg1.png "Project Pigeon")
+![alt text](https://i.imgur.com/9H8xSO1.png "Project Pigeon")
 Application features & callouts:
 - UI for Pigeon Chat Application
 
