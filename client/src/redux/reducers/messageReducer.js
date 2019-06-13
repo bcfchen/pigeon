@@ -12,7 +12,7 @@ export default function messageReducer(state = initialState.message, action) {
       break;
     case types.ADD_MESSAGE_SUCCESS:
       const clonedMessages = state.messages.slice();
-      const pendingMessage = clonedMessages.slice().find(message => message.isPending);
+      const pendingMessage = clonedMessages.find(message => message.isPending);
       pendingMessage.isPending = false;
       newState = {
         ...state,

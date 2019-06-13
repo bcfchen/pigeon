@@ -1,7 +1,9 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import * as localeUtils from '../../utilities/localeUtils';
 
-const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit }) => (
+const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit, t }) => (
   <div className='uk-panel'>
     <div className='uk-card uk-card-body uk-align-center login-card'>
       <form onSubmit={() => onSubmit()}>
@@ -11,7 +13,7 @@ const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit 
             <input
               className='uk-input'
               type='email'
-              placeholder='Enter your email'
+              placeholder={t('enterYourEmail')}
               value={email || ''}
               onChange={e => onEmailUpdate(e.target.value)}
             />
@@ -23,15 +25,25 @@ const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit 
             <input
               className='uk-input'
               type='password'
-              placeholder='Enter your password'
+              placeholder={t('enterYourPassword')}
               value={password || ''}
               onChange={e => onPasswordUpdate(e.target.value)}
             />
           </div>
         </div>
         <button type='submit' className='uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom'>
-          Log In
+          {t('login')}
         </button>
+        <ul className='uk-subnav uk-subnav-pill' uk-switcher>
+          <li>
+            {/* eslint-disable-next-line*/}
+            <a href="#" onClick={() => { localeUtils.switchLocale('en') }}>{t('english')}</a>
+          </li>
+          <li>
+            {/* eslint-disable-next-line*/}
+            <a href="#" onClick={() => { localeUtils.switchLocale('ch') }}>{t('chinese')}</a>
+          </li>
+        </ul>
       </form>
     </div>
   </div>
@@ -51,4 +63,4 @@ LoginForm.defaultProps = {
   password: undefined,
 };
 
-export default LoginForm;
+export default withTranslation()(LoginForm);

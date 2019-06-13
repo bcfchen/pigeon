@@ -34,7 +34,7 @@ class InfoPage extends React.Component {
     const { users } = this.props;
     const { isLoading } = this.state;
 
-    const usersList = users.map(user => <li className='user-info-item'>
+    const usersList = users.map(user => <li key={`${user.id}-${user.name}`} className='user-info-item'>
       <img className="uk-margin-medium-left uk-margin-medium-right user-icon" src={user.img} width={50} height={50} alt="" />
       <span className="uk-text-middle">{user.name}</span>
     </li>);
