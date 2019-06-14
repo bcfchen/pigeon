@@ -17,7 +17,7 @@
 - Immediately upon adding a new message, a small loading icon will appear on the right side of the new message
 - Loading icon will disappear once message is added successfully (simulated) on the server side
 - Hitting the __play__ button will add multiple messages from other users
-- Use the "English" and "中文" buttons on the login screen to toggle languages
+- Use the English/Chinese buttons on the login screen to toggle languages
 - Use the __<>__ button on the top right side of the chat screen to toggle languages
 
 ### Technical decisions and caveats
@@ -28,12 +28,16 @@
 
 ### Next steps
 
-- Unit testing of React components as well as redux actions/reducers etc
-- UI automation tests with Selenium
-- Improve transition between chat and info screens, potentially with TransitionGroup
-- Implement retry mechanism for unsuccessful attempts to add new messages (ex. no connection)
-- Visual indicator (ex. "..." in iMessage) while user is typing in the message box
-- Refactor language localeUtilities to be more configurable and scalable to accomodate more languages
+* Testing
+ * Unit testing of React components as well as redux actions/reducers etc
+ * UI automation tests with Selenium
+* UI/UX Features
+ * Improve transition between chat and info screens, potentially with TransitionGroup
+ * Implement retry mechanism for unsuccessful attempts to add new messages (ex. no connection)
+ * Visual indicator (ex. "..." in iMessage) while user is typing in the message box
+* Tech Improvements
+ * Refactor language localeUtilities to be more configurable and scalable to accomodate more languages
+ * Implement error handling for both globally (ex. default popup) and locally within components (ex. error banner)
 
 ### To install
 Clone this repo with 
