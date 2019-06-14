@@ -11,7 +11,7 @@ const App = () => (
       <Router>
         <>
           <Route path='/:path' component={NavBar} />
-          <Route exact path="/" component={() => <Redirect to="/chat" />} />
+          <Route exact path='/' component={() => <Redirect to='/chat' />} />
           <Route path='/chat' component={ChatPage} />
           <Route path='/info' component={InfoPage} />
         </>

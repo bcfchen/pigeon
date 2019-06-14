@@ -81,11 +81,11 @@ class ChatPage extends React.Component {
     const shouldDisable = !isLoggedIn || isLoading;
     return (
       <>
-        {!isLoggedIn && < div className='login-container'><LoginDialog /></div>}
+        {!isLoggedIn && <div className='login-container'><LoginDialog /></div>}
         <div className={`uk-panel chat-page ${shouldDisable && 'disabled'}`}>
           <div className='chat-window-container uk-margin-small-top uk-margin-small-left uk-margin-small-right'>
             <ChatWindow messages={messages} />
-            <div ref={bottomElem => { this.bottomElem = bottomElem; }} />
+            <div ref={(bottomElem) => { this.bottomElem = bottomElem; }} />
           </div>
           <div className='uk-align-center uk-margin-small-bottom uk-margin-medium-left uk-margin-medium-right uk-position-bottom'>
             <MessageInput
@@ -104,6 +104,10 @@ ChatPage.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape(Message)).isRequired,
   messageHandler: PropTypes.objectOf(PropTypes.func).isRequired,
   userInfo: PropTypes.shape(User),
+};
+
+ChatPage.defaultProps = {
+  userInfo: undefined,
 };
 
 const mapDispatchToProps = dispatch => ({

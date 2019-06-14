@@ -3,6 +3,7 @@ import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import * as localeUtils from '../../utilities/localeUtils';
 
+// eslint-disable-next-line
 const LoginForm = ({ email, password, onEmailUpdate, onPasswordUpdate, onSubmit, t }) => (
   <div className='uk-panel'>
     <div className='uk-card uk-card-body uk-align-center login-card'>

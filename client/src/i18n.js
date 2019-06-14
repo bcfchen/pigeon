@@ -5,11 +5,11 @@ import en from './locale/en';
 import ch from './locale/ch';
 
 // not like to use this?
-// have a look at the Quick start guide 
+// have a look at the Quick start guide
 // for passing in lng and translations on init
 
 const resources = {
-  en, ch
+  en, ch,
 };
 
 i18n
@@ -31,8 +31,8 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     react: {
-      useSuspense: false
-    }
+      useSuspense: false,
+    },
   });
 
 

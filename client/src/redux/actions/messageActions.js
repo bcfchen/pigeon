@@ -18,17 +18,24 @@ export const loadMessagesSuccess = messages => ({
 });
 
 export const addMessageActionCreator = (userId, messageText) => async (dispatch) => {
-  dispatch(addPendingMessage(new Message({ userId, messageText, isPending: true, isMyMessage: true })));
+  dispatch(addPendingMessage(new Message(
+    {
+      userId,
+      messageText,
+      isPending: true,
+      isMyMessage: true,
+    },
+  )));
   await addMessage(userId, messageText);
   dispatch(addMessageSuccess());
 };
 
-export const loadMessagesActionCreator = (userId) => async (dispatch) => {
+export const loadMessagesActionCreator = userId => async (dispatch) => {
   const messageObjs = await loadMessages();
   const messages = messageObjs.map(messageObj => (
     new Message({
       ...messageObj,
-      isMyMessage: messageObj.userId === userId
+      isMyMessage: messageObj.userId === userId,
     })
   ));
   dispatch(loadMessagesSuccess(messages));

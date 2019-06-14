@@ -8,8 +8,8 @@ const initialState = {
     messages: [],
   },
   users: {
-    users: []
-  }
+    users: [],
+  },
 };
 
 export default initialState;

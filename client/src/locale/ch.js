@@ -12,5 +12,5 @@ export default {
   locale: {
     english: 'English',
     chiese: '中文',
-  }
+  },
 };

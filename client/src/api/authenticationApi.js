@@ -1,7 +1,7 @@
 import userInfo from '../data/userInfo';
 import User from '../models/core/User';
 
-const login = (email, password) => (new Promise((resolve) => {
+const login = email => (new Promise((resolve) => {
   resolve(new User({ ...userInfo, email }));
 }));
 

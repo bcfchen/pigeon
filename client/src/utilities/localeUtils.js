@@ -10,7 +10,7 @@ export const toggleLocale = () => {
     ch: ['zh-cn', 'zh-hk', 'zh-tw'],
   };
   const newLocale = Object.keys(localeKeys)
-    .find((localeKey) => !localeKeys[localeKey].includes(i18n.language));
+    .find(localeKey => !localeKeys[localeKey].includes(i18n.language));
 
   switchLocale(newLocale);
 };
